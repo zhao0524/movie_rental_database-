@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Signup</title>
+<style>body{ text-align: center; margin-top: 80px;} form{display:inline-block;}</style>
+</head>
+<body>
+  <h2>Customer Signup</h2>
+  <form method="post">
+    Full Name: <input name="name" type="text" required><br>
+    Email: <input name="email" type="email" required><br>
+    Password: <input name="password" type="password" required><br>
+    Phone: <input name="phone" type="tel"><br>
+    <button type="submit">Sign Up</button>
+  </form>
+  <div>{% with messages = get_flashed_messages() %}{% if messages %}<p style="color:red">{{ messages[0] }}</p>{% endif %}{% endwith %}</div>
+  <a href="/login/customer">Login</a> | <a href="/">Home</a>
+</body>
+</html>

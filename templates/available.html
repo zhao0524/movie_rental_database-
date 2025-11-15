@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Available Equipment</title>
+<style>body { text-align: center; margin-top: 80px; } table { margin: auto; }</style>
+</head>
+<body>
+  <h2>Available Equipment</h2>
+  <table border="1">
+    <tr><th>ID</th><th>Name</th><th>Brand</th><th>Model</th><th>Rate</th><th>Category</th></tr>
+    {% for e in equip %}
+    <tr>
+      <td>{{e.equip_id}}</td><td>{{e.Name}}</td><td>{{e.brand}}</td><td>{{e.model}}</td><td>{{e.daily_rate}}</td><td>{{e.category}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br><a href="/customer">Customer Dashboard</a> | <a href="/employee">Employee Dashboard</a> | <a href="/">Home</a>
+</body>
+</html>

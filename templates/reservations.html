@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Make Reservation</title>
+<style>body { text-align: center; margin-top: 80px; } table { margin: auto; }</style>
+</head>
+<body>
+  <h2>Make a Reservation</h2>
+  <form method="post">
+    <label>Equipment:</label>
+    <select name="equip_id" required>
+      {% for e in equip %}
+      <option value="{{e.equip_id}}">{{e.Name}} - {{e.brand}} {{e.model}}</option>
+      {% endfor %}
+    </select><br>
+    <label>Start Date:</label> <input name="start" type="date" required><br>
+    <label>End Date:</label> <input name="end" type="date" required><br>
+    <button type="submit">Reserve</button>
+  </form>
+  <div>{% with messages = get_flashed_messages() %}{% if messages %}<p style="color:green">{{ messages[0] }}</p>{% endif %}{% endwith %}</div>
+  <br><a href="/customer">Customer Dashboard</a>
+</body>
+</html>

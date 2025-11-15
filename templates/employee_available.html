@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Branch Equipment</title>
+<style>body { text-align: center; margin-top: 80px; } table { margin: auto; }</style>
+</head>
+<body>
+  <h2>Available Equipment at Branch {{ branch }}</h2>
+  <table border="1">
+    <tr><th>ID</th><th>Name</th><th>Brand</th><th>Model</th><th>Rate</th><th>Branch</th></tr>
+    {% for e in equip %}
+    <tr>
+      <td>{{e.equip_id}}</td><td>{{e.Name}}</td><td>{{e.brand}}</td><td>{{e.model}}</td><td>{{e.daily_rate}}</td><td>{{e.branch}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br><a href="/employee">Employee Dashboard</a>
+  <br><a href="/logout">Logout</a>
+</body>
+</html>
